@@ -1,0 +1,250 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API UX WRDA Customer Landing V1",
+    "description": "API que realiza la validación del usuario",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/channel/wrda/v1/customer-landing"
+    }
+  ],
+  "x-bcp-api-type": "UX",
+  "tags": [
+    {
+      "name": "Customer Landing",
+      "description": "Customer Landing Controller"
+    }
+  ],
+  "paths": {
+    "/validate/{authenticationKey}": {
+      "get": {
+        "tags": [
+          "Customer Landing"
+        ],
+        "summary": "Valida a usuario autenticado.",
+        "description": "### Acerca de la funcionalidad expuesta\n\nLa funcionalidad permite validar al usuario con el aplicativo WARDA.\n\n### Precondiciones para el consumo de esta versión de la API\n\nNo aplica.\n\n### Usos válidos de Query Parameters\n\nNo aplica.\n\n### Variantes válidas del Payload (Cuerpo del mensaje)\n\nNo Aplica.\n\n### Query Parameters válidos en esta versión de la API\n\nNo Aplica.\n\n### Lista de Valores usadas en esta versión de la API\n\nNo Aplica.\n\n### Códigos de error usados en esta versión de la API\n\n| Código |  HTTP Status | Descripción |\n|--------|--------------|-------------|\n| W40000 | 400 | Los datos proporcionados no son válidos\n| W40001 | 401 | Usuario en archivo negativo\n| W40002 | 500 | Ocurrió un error en el servicio Externo consumido\n| W40003 | 503 | Ocurrió un error en la comunicación con el BackEnd\n| W49999 | 500 | Ocurrió un error inesperado. Por favor contactarse con Soporte Técnico",
+        "operationId": "validateCustomerLandingGET",
+        "x-atlas-header": {
+          "$ref": "#/components/schemas/ValidateHeaders"
+        },
+        "parameters": [
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Request-ID"
+          },
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/request-date"
+          },
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/app-code"
+          },
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/caller-name"
+          },
+          {
+            "$ref": "#/components/parameters/authenticationKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta correcta.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateResponse"
+                }
+              },
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "El cliente envi&oacute; datos incorrectos.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              },
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Usuario en archivo negativo.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              },
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Ocurrió un error inesperado.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              },
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/test/{authenticationKey}": {
+      "get": {
+        "tags": [
+          "Customer Landing"
+        ],
+        "summary": "Test a usuario autenticado.",
+        "description": "### Acerca de la funcionalidad expuesta\n\nLa funcionalidad permite validar al usuario con el aplicativo WARDA.\n\n### Precondiciones para el consumo de esta versión de la API\n\nNo aplica.\n\n### Usos válidos de Query Parameters\n\nNo aplica.\n\n### Variantes válidas del Payload (Cuerpo del mensaje)\n\nNo Aplica.\n\n### Query Parameters válidos en esta versión de la API\n\nNo Aplica.\n\n### Lista de Valores usadas en esta versión de la API\n\nNo Aplica.\n\n### Códigos de error usados en esta versión de la API\n\nNo Aplica.",
+        "operationId": "testCustomerLandingGET",
+        "x-atlas-header": {
+          "$ref": "#/components/schemas/ValidateHeaders"
+        },
+        "parameters": [
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/Request-ID"
+          },
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/request-date"
+          },
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/app-code"
+          },
+          {
+            "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/parameters/caller-name"
+          },
+          {
+            "$ref": "#/components/parameters/authenticationKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta correcta.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateResponse"
+                }
+              },
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "El cliente envi&oacute; datos incorrectos.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              },
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Usuario en archivo negativo.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              },
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Ocurrió un error inesperado.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              },
+              "application/json;charset=UTF-8": {
+                "schema": {
+                  "$ref": "https://swaggerhub.lima.bcp.com.pe/v1/domains/BCP_Org/Atlas-Domain/1.0.0#/components/schemas/ApiException"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "authenticationKey": {
+        "name": "authenticationKey",
+        "in": "path",
+        "description": "codigo generado por CIAM",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "schemas": {
+      "ValidateHeaders": {
+        "type": "object"
+      },
+      "ValidateResponse": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "example": "c2bb69ce-56b5-11eb-ae93-0242ac130002",
+            "description": "Session Id generado."
+          },
+          "name": {
+            "type": "string",
+            "example": "Juan",
+            "description": "Indica el primer nombre del usuario."
+          },
+          "isUser": {
+            "type": "boolean",
+            "example": true,
+            "description": "Indica si es un usuario WARDA."
+          }
+        }
+      }
+    }
+  }
+}
